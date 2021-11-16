@@ -1,4 +1,5 @@
 import React from "react";
+import './Button.css';
 
 class Button extends React.Component{
 
@@ -16,13 +17,29 @@ class Button extends React.Component{
             }
         )
     }
+    
+     resetCounter() {
+        this.setState({ count: 0 })
+    }
 
     render(){
         return (
-            <div>
-                <button onClick = {this.addCounter}>Click mo 'ko!!!</button>
-                <p>counter = {this.state.count}</p>
-            </div>
+                <div>
+                    <p>clicker counter = {this.state.count}</p>
+                    
+                    <button
+                        id="button"
+                        onClick={(e) => this.addCounter(e)}>
+                        🐼 Click me!! 🐼
+                    </button>
+                    
+                    <button
+                        id="button"
+                        onClick={(e) => this.resetCounter(e)}>
+                         🐼 Reset  🐼
+                    </button>
+                </div>
+            
         )
     }
 }

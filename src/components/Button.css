@@ -1,0 +1,14 @@
+#button {
+    background-color: #e4a199;
+    color: #9e4244;
+    width: 18ch;
+    height: 4ch;
+    font-family: Helvetica;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-table;
+    margin: 2px .25in 0 .25in;
+    cursor: pointer;
+}
+

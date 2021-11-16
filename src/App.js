@@ -1,27 +1,42 @@
-import logo from './logo.svg';
+import logo from './logo.gif';
 import './App.css';
 import Greet from './components/Greet';
+import Message from './components/Message';
 import Button from './components/Button';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload. --- ✨🦋 chi❤ 🦋✨
-        </p>
-        <Greet name = "Chiara" stageName = "Chi">
+        
+        
+        <Greet name = "Panda" stageName = "Panpan">
+        <Message/>
+        <p>rawr</p>
         <Button/>
         </Greet>
+        
+        <p><b> ---------------------------------------------------------------------------- </b></p>
+        
+        <img src="https://64.media.tumblr.com/cdead4eeb0f09e0fa4f6183922ce855f/tumblr_p4ey78eeed1sbjo65o1_1280.gifv"
+          className="App-gif"
+          height="300"
+          alt="panda gif"
+          >
+        </img>
+        
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://www.youtube.com/watch?v=dKLpEb4i0Mk"
           target="_blank"
           rel="noopener noreferrer"
+          color="#9e4244"
         >
-          Learn React
+          here's a video of cute me annoying my friend and rolling ehe
         </a>
+        
       </header>
     </div>
   );
