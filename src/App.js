@@ -32,7 +32,6 @@ function App() {
           href="https://www.youtube.com/watch?v=dKLpEb4i0Mk"
           target="_blank"
           rel="noopener noreferrer"
-          color="#9e4244"
         >
           here's a video of cute me annoying my friend and rolling ehe
         </a>
