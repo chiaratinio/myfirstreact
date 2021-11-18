@@ -3,7 +3,7 @@ import './App.css';
 import Greet from './components/Greet';
 import Message from './components/Message';
 import Button from './components/Button';
-
+import Hello from './components/Hello';
 
 function App() {
   return (
@@ -11,10 +11,10 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         
+        <p>{Hello()}</p>
         
         <Greet name = "Panda" stageName = "Panpan">
         <Message/>
-        <p>rawr</p>
         <Button/>
         </Greet>
         

@@ -25,7 +25,7 @@ class Button extends React.Component{
     render(){
         return (
                 <div>
-                    <p>clicker counter = {this.state.count}</p>
+                    <p><u>🐼 <b>clicker counter = {this.state.count}</b> 🐼</u></p>
                     
                     <button
                         id="button"

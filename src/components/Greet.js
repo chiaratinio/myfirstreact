@@ -1,7 +1,7 @@
 const Greet = (props) =>{
     return(
         <div>
-            <h1>Hello I'm {props.name}, a.k.a {props.stageName}</h1>
+            <h2>I'm {props.name}, <br></br> but you can call me {props.stageName}</h2>
             {props.children}
         </div>
     )
