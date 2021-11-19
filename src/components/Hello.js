@@ -3,7 +3,7 @@ import helloServices from "../services/helloServices";
 
 const Hello = () => {
     // react hooks useState
-    const [hello, setHello] = useState("");
+    const [hello, setHello] = useState("something's just not working (the API), but it ayt ehe");
     
     //react hooks useEffect
     // axios - tool for http request promises

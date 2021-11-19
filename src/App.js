@@ -4,6 +4,7 @@ import Greet from './components/Greet';
 import Message from './components/Message';
 import Button from './components/Button';
 import Hello from './components/Hello';
+import Employee from './components/Employee';
 
 function App() {
   return (
@@ -11,12 +12,17 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         
-        <p>{Hello()}</p>
+    <p>{Hello()}</p>
         
         <Greet name = "Panda" stageName = "Panpan">
         <Message/>
         <Button/>
         </Greet>
+        
+        
+        <p><b> ---------------------------------------------------------------------------- </b></p>
+        
+        <Employee/>
         
         <p><b> ---------------------------------------------------------------------------- </b></p>
         
