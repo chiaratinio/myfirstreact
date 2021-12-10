@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 import employeeService from '../services/employeeService'
-import './Employee.css';
+import { Link } from "react-router-dom"
 
 const Employee = () => {
     const [employees, setEmployees] = useState([])
@@ -22,26 +22,36 @@ const Employee = () => {
     return (
         <div id="employee">
             <h2>🐼 List of Employees 🐼</h2>
-            <table border="1">
-                <tr>
-                <td><b>Name</b></td>
-                    <td><b>Department</b></td>
-                    <td><b>Location</b></td>
-                </tr>
-                {
-                    employees.map(
-                        employee => (
-                            <tr>
-                                <td>{employee.name}</td>
-                                <td>{employee.department}</td>
-                                <td>{employee.location}</td>
+                <div className="container">
+                    <table className="table table-hover table-light table-bordered border-dark">
+                        <thead>
+                            <tr className="table-warning">
+                                <td><b>Name</b></td>
+                                <td><b>Department</b></td>
+                                <td><b>Location</b></td>
+                                <td><b>Action</b></td>
                             </tr>
-                        )
-                    )
-                }
-            </table>
+                        </thead>
+                
+                        <tbody>
+                        {
+                            employees.map(
+                                employee => (
+                                    <tr key={employee.employee_id}>
+                                        <td>{employee.name}</td>
+                                        <td>{employee.department}</td>
+                                        <td>{employee.location}</td>
+                                        <td>
+                                            <Link className= "btn btn-primary" to={`/edit/${employee.employee_id}`}>Update</Link>
+                                        </td>
+                                    </tr>
+                                )
+                            )
+                        }
+                        </tbody>
+                </table>
+            </div>
         </div>
     )
 }
-
 export default Employee;
