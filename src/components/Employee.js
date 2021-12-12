@@ -1,11 +1,16 @@
 import {useEffect, useState} from 'react'
 import employeeService from '../services/employeeService'
 import { Link } from "react-router-dom"
+import logo1 from '../logo1.gif';
 
 const Employee = () => {
     const [employees, setEmployees] = useState([])
 
     useEffect(() => {
+        refreshEmployeeTable();
+    })
+    
+    const refreshEmployeeTable = () => (
         employeeService.getEmployees() // promise
             .then(
                 response => {
@@ -17,10 +22,25 @@ const Employee = () => {
                     console.log('sorry po lods :p')
                 }
             )
-    })
-
+    )
+    
+    const deleteEmployee = (employee_id) => {
+        employeeService.deleteEmployee(employee_id)
+                .then(
+                    console.log('Yay! Succesfully deleted an employee!')
+                )
+                .catch(
+                    error =>{
+                            console.error("Oh no! Something went wrong!", error)
+                        }
+                )
+        
+    }
+    
     return (
         <div id="employee">
+        <header className="App-header">
+            <img src={logo1} className="App-logo" alt="logo"/>
             <h2>🐼 List of Employees 🐼</h2>
                 <div className="container">
                     <table className="table table-hover table-light table-bordered border-dark">
@@ -42,7 +62,10 @@ const Employee = () => {
                                         <td>{employee.department}</td>
                                         <td>{employee.location}</td>
                                         <td>
-                                            <Link className= "btn btn-primary" to={`/edit/${employee.employee_id}`}>Update</Link>
+                                            <div className="d-grid gap-2 d-md-flex">
+                                                <Link className= "btn btn-primary" to={`/myfirstreact/edit/${employee.employee_id}`}>Update</Link>
+                                                <button className= "btn btn-danger" onClick={()=> deleteEmployee(employee.employee_id)}>Delete</button>
+                                            </div>
                                         </td>
                                     </tr>
                                 )
@@ -51,7 +74,8 @@ const Employee = () => {
                         </tbody>
                 </table>
             </div>
-        </div>
+            </header>
+            </div>
     )
 }
 export default Employee;

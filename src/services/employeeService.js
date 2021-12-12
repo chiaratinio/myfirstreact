@@ -16,4 +16,7 @@ const getEmployee = (employee_id) =>{
     return httpclient.get(`/employees/${employee_id}`)
 }
 
-export default {getEmployees, postEmployee, putEmployee, getEmployee};
+const deleteEmployee = (employee_id) =>{
+    return httpclient.delete(`/employees/${employee_id}`)
+}
+export default {getEmployees, postEmployee, putEmployee, getEmployee, deleteEmployee};

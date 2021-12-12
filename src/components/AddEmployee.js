@@ -1,6 +1,8 @@
 import {useState, useEffect} from "react"
 import {useNavigate, useParams} from "react-router-dom";
 import employeeService from "../services/employeeService";
+import logo2 from '../logo2.gif';
+import './AddEmployee.css';
 
 const AddEmployee =() =>{
     const [name, setName] = useState("");
@@ -27,7 +29,7 @@ const AddEmployee =() =>{
                 )
             }
             else{
-                console.log("Sorry! employee_id does not exist")
+                console.log("Sorry! The employee_id does not exist")
             }
         },[]
     )
@@ -42,7 +44,7 @@ const AddEmployee =() =>{
                 .then(
                     response =>{
                         console.log("Yay! Updated employee!", response.data)
-                        navigate('/employees')
+                        navigate('/myfirstreact/employees')
                     }
                 )
                 .catch(
@@ -59,7 +61,7 @@ const AddEmployee =() =>{
                 .then(
                     response =>{
                         console.log("Yay! Added a new employee!", response.data)
-                        navigate("/employees")
+                        navigate("/myfirstreact/employees")
                     }
                 )
                 .catch(
@@ -71,7 +73,9 @@ const AddEmployee =() =>{
     }
     
     return (
-        <div className="container">
+        <div>
+            <header className="App-header">
+            <img src={logo2} className="App-logo" alt="logo"/>
             <h1>Add Employee</h1>
                 <form>
                     <div className="mb-3">
@@ -79,6 +83,7 @@ const AddEmployee =() =>{
                         <input 
                         type="text" 
                         className="form-control" 
+                        value={name}
                         id="name"
                         placeholder="Add employee name"
                         onChange={
@@ -93,6 +98,7 @@ const AddEmployee =() =>{
                         <input 
                         type="text" 
                         className="form-control" 
+                        value={department}
                         id="department"
                         placeholder="Add employee department"
                         onChange={
@@ -107,6 +113,7 @@ const AddEmployee =() =>{
                         <input 
                         type="text" 
                         className="form-control" 
+                        value={location}
                         id="location"
                         placeholder="Add employee location"
                         onChange={
@@ -118,7 +125,8 @@ const AddEmployee =() =>{
                     </div>
                     <button type="submit" className="btn btn-primary" onClick={(e) => saveEmployee(e)}>Save</button>
                 </form>
-        </div>
+                </header>
+            </div>
     )
 }
 
