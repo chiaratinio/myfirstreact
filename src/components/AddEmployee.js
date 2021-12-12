@@ -2,7 +2,6 @@ import {useState, useEffect} from "react"
 import {useNavigate, useParams} from "react-router-dom";
 import employeeService from "../services/employeeService";
 import logo2 from '../logo2.gif';
-import './AddEmployee.css';
 
 const AddEmployee =() =>{
     const [name, setName] = useState("");
