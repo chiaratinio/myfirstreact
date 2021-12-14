@@ -84,7 +84,7 @@ const AddEmployee =() =>{
                         className="form-control" 
                         value={name}
                         id="name"
-                        placeholder="Add employee name"
+                        placeholder="Please input name"
                         onChange={
                             (e) =>{
                                 setName(e.target.value)
@@ -99,7 +99,7 @@ const AddEmployee =() =>{
                         className="form-control" 
                         value={department}
                         id="department"
-                        placeholder="Add employee department"
+                        placeholder="Please input department"
                         onChange={
                             (e) =>{
                                 setDepartment(e.target.value)
@@ -114,7 +114,7 @@ const AddEmployee =() =>{
                         className="form-control" 
                         value={location}
                         id="location"
-                        placeholder="Add employee location"
+                        placeholder="Please input location"
                         onChange={
                             (e) =>{
                                 setLocation(e.target.value)

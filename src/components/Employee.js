@@ -25,17 +25,24 @@ const Employee = () => {
     )
     
     const deleteEmployee = (employee_id) => {
-        employeeService.deleteEmployee(employee_id)
-                .then(
-                    console.log('Yay! Succesfully deleted an employee!')
-                )
-                .catch(
-                    error =>{
-                            console.error("Oh no! Something went wrong!", error)
-                        }
-                )
-        
+        let YN = window.confirm("Are you sure you want to delete this record?");
+
+        if(YN){
+            employeeService.deleteEmployee(employee_id)
+            .then(
+                response =>{
+                    console.log("Yay! Succesfully deleted an employee!")
+                    refreshEmployeeTable();
+                }
+            )
+            .catch(
+                error =>{
+                    console.error("Oh no! Something went wrong!", error);
+                }
+            )
+        }
     }
+    
     
     return (
         <div id="employee">
@@ -57,7 +64,7 @@ const Employee = () => {
                         {
                             employees.map(
                                 employee => (
-                                    <tr key={employee.employee_id}>
+                                    <tr className="table-primary" key={employee.employee_id}>
                                         <td>{employee.name}</td>
                                         <td>{employee.department}</td>
                                         <td>{employee.location}</td>
